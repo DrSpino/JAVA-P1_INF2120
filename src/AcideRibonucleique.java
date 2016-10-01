@@ -10,11 +10,11 @@ public class AcideRibonucleique extends ArrayList<Nucleotide> {
 	}
 	
 	/*
-	 * Permet de retrouver un codon à une position donnee
-	 * dans une séquence de Nucleotide.
+	 * Permet de retrouver un codon a une position donnee
+	 * dans une sequence de Nucleotide.
 	 * 
 	 * @param position
-	 * 			un entier qui correspond à la position
+	 * 			un entier qui correspond a la position
 	 * 			dans une sequence de Nucleotide.
 	 * @return [] codon
 	 * 			un tableau de 3 Nucleotide.
@@ -39,7 +39,7 @@ public class AcideRibonucleique extends ArrayList<Nucleotide> {
 	}
 	
 	/*
-	 * Verifie que la sequence répond a certains
+	 * Verifie que la sequence repond a certains
 	 * criteres de validite precis.
 	 * 
 	 * @return valide
@@ -115,9 +115,9 @@ public class AcideRibonucleique extends ArrayList<Nucleotide> {
 	}
 	
 	public AcideRibonucleique complement(){
-		//Inverse chaque lettre de la séquence
+		//Inverse chaque lettre de la sequence
 		//A <> U et C <> G
-		/*Pour nucléotide inverser l'ensemble ex :
+		/*Pour nucleotide inverser l'ensemble ex :
 		 * R = {A,G} <> {U,C} = {C,U} = Y 
 		 * Regarder complement cours plus simple*/
 		return null;
@@ -126,8 +126,8 @@ public class AcideRibonucleique extends ArrayList<Nucleotide> {
 	public boolean decrit( AcideRibonucleique decrite ){
 		//XI.decrit(x2)
 		// Chaine taille difference return false
-		/*Ex : VHCGNRCA décrit MACGUGCA ?
-		 * M décrit V mais V ne décrit pas M
+		/*Ex : VHCGNRCA decrit MACGUGCA ?
+		 * M decrit V mais V ne decrit pas M
 		 * Voir page 3 TP*/
 		return false;
 	}
