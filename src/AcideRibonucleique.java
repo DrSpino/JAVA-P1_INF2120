@@ -1,12 +1,13 @@
 import java.util.ArrayList;
+import java.util.Collection;
 
 public class AcideRibonucleique extends ArrayList<Nucleotide> {
 	
 	/*
 	 * Methode qui permet d'heriter de la classe ArrayList
 	 * */
-	public AcideRibonucleique(){
-		super();
+	public AcideRibonucleique( Collection< Nucleotide > c ) {
+		super( c );
 	}
 	
 	/*
@@ -144,7 +145,8 @@ public class AcideRibonucleique extends ArrayList<Nucleotide> {
 	}
 	
 	public static void main (String[] args){
-		AcideRibonucleique ok = new AcideRibonucleique();
+		
+		ArrayList <Nucleotide> ok = new ArrayList <>();
 		ok.add(Nucleotide.A);
 		ok.add(Nucleotide.U);
 		ok.add(Nucleotide.G);
@@ -158,7 +160,8 @@ public class AcideRibonucleique extends ArrayList<Nucleotide> {
 		ok.add(Nucleotide.A);
 		ok.add(Nucleotide.A);
 		
-		System.out.println(ok.estValide());
-		System.out.println(ok.getAcideAmine(7));
+		AcideRibonucleique tab = new AcideRibonucleique(ok);
+		System.out.println(tab.estValide());
+		System.out.println(tab.getAcideAmine(7));
 	}
 }
