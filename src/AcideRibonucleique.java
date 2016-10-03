@@ -127,10 +127,10 @@ public class AcideRibonucleique extends ArrayList<Nucleotide> {
 		AcideAmine acide = null;
 		codon = Codon(position);
 		/*
-		 * Voir la classe TableauAcide pour voir
+		 * Voir la classe Acide pour voir
 		 * le deroulement de l'algorithme.
 		 * */
-		acide = TableauAcide.acide(codon);
+		acide = Acide.acide(codon);
 		return acide;
 	}
 	
@@ -207,11 +207,11 @@ public class AcideRibonucleique extends ArrayList<Nucleotide> {
 	public boolean decrit( AcideRibonucleique decrite ){
 		boolean decrit = true;
 		/*
-		 * Voir la classe TableauDecrit pour voir
+		 * Voir la classe Decrit pour voir
 		 * le deroulement de l'algorithme.
 		 * */
 		if (this.size()== decrite.size()){
-			decrit = TableauDecrit.decrite(this,decrite);
+			decrit = Decrit.decrite(this,decrite);
 		}else{
 			decrit = false;
 		}
@@ -220,24 +220,13 @@ public class AcideRibonucleique extends ArrayList<Nucleotide> {
 	}
 	
 	public AcideRibonucleique generalise( AcideRibonucleique arn ){
-		//XI.generalise(x2)
-		//Chaine taille differente leve exception indexOutOfBoundException
-		/*Union ex: ARHUN union ACSHUV
-		 * A et C = M || R et S = V || H et H = H
-		 * U et U = U || N et V = N
-		 * Pour test x3.decrit(x1) et x3.decrit(x2)
-		 * tableau page 4*/
-		return this;
-	}
-	
-	public static void main (String[] args){
-		ArrayList <Nucleotide> tab = new ArrayList <>(Arrays.asList(Nucleotide.C,Nucleotide.K,Nucleotide.N));
-		ArrayList <Nucleotide> decrit = new ArrayList <>(Arrays.asList(Nucleotide.C,Nucleotide.G,Nucleotide.N));
+		ArrayList<Nucleotide>gen = new ArrayList<>();
 		
-		AcideRibonucleique arn = new AcideRibonucleique (tab);
-		AcideRibonucleique decrite = new AcideRibonucleique (decrit);
+		if (this.size()== arn.size()){
+			gen = Generalise.Gen(this,arn);
+		}
 		
-		System.out.print(arn.decrit(decrite));
-		
+		AcideRibonucleique generalise = new AcideRibonucleique(gen);
+		return generalise;
 	}
 }

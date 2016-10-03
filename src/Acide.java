@@ -4,7 +4,7 @@ import java.util.ArrayList;
  * Classe qui permet de retourner l'acide aminee
  * qui correspond au codon.
  * */
-public class TableauAcide {
+public class Acide {
 	
 	/*
 	 * Serie de tableau qui facilite la recherche

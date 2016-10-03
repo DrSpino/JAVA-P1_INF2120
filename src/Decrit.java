@@ -4,7 +4,7 @@ import java.util.Arrays;
  * Classe qui permet de retourner si
  * une sequence ARN est bien decrite par l'arn de base.
  * */
-public class TableauDecrit {
+public class Decrit {
 	/*
 	 * Serie d'arrayList qui permet de faciliter
 	 * la comparaison entre les deux ARN.

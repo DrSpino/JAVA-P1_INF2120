@@ -112,7 +112,7 @@ public class Principaler {
 		testerGetAcideAmine();
 		testerComplement();
 		testerDecrit();
-		
+		testerGeneralise();
 	}
 
 }
