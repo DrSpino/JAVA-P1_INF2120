@@ -110,6 +110,9 @@ public class Principaler {
 		testerBase();
 		testerEstValide();
 		testerGetAcideAmine();
+		testerComplement();
+		testerDecrit();
+		
 	}
 
 }

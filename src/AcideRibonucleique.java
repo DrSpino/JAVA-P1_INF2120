@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 
 public class AcideRibonucleique extends ArrayList<Nucleotide> {
@@ -71,7 +72,7 @@ public class AcideRibonucleique extends ArrayList<Nucleotide> {
 		if ((this.size()%3) != 0){
 			valide = false;
 		}else{
-			for (int position = 0;position<=this.size()-1; ++position){
+			for (int position = 0;position<this.size(); ++position){
 				codon = codon(position);
 			
 				if(position == 0 || position == 1 || position == 2){
@@ -133,22 +134,89 @@ public class AcideRibonucleique extends ArrayList<Nucleotide> {
 		return acide;
 	}
 	
+	/*
+	 * Permet de creer une sequence complement de la
+	 * sequence de base, celle-ci inverse
+	 * les Nucleotides selon le tableau du TP.
+	 * 
+	 * @return ARN
+	 * 		Un arrayList de Nucleotide qui represente
+	 * 		le complement de la sequence initiale.
+	 * */
 	public AcideRibonucleique complement(){
-		//Inverse chaque lettre de la sequence
-		//A <> U et C <> G
-		/*Pour nucleotide inverser l'ensemble ex :
-		 * R = {A,G} <> {U,C} = {C,U} = Y 
-		 * Regarder complement cours plus simple*/
-		return null;
+		AcideRibonucleique comp = new AcideRibonucleique ();
+		
+		for(int i = 0; i < this.size() ; ++i){
+			switch (this.get(i)){
+			case A :
+				comp.add(Nucleotide.U);
+				break;	
+			case U :
+				comp.add(Nucleotide.A);
+				break;
+			case C :
+				comp.add(Nucleotide.G);
+				break;
+			case G :
+				comp.add(Nucleotide.C);
+				break;
+			case D :
+				comp.add(Nucleotide.H);
+				break;
+			case H :
+				comp.add(Nucleotide.D);
+				break;
+			case K :
+				comp.add(Nucleotide.M);
+				break;
+			case M :
+				comp.add(Nucleotide.K);
+				break;
+			case R :
+				comp.add(Nucleotide.Y);
+				break;
+			case Y :
+				comp.add(Nucleotide.R);
+				break;
+			case B :
+				comp.add(Nucleotide.V);
+				break;
+			case V :
+				comp.add(Nucleotide.B);
+				break;
+			default:
+				comp.add(this.get(i));
+				break;
+			}
+		}
+		return comp;
 	}
-	
+	/*
+	 * Permet de comparer deux arn et de determiner si
+	 * une sequence arn est bien decrite par la sequence
+	 * de base.
+	 * 
+	 * @param decrite
+	 * 		un array arn qui represente la sequence que 
+	 * 		l'on souhaite decrire.
+	 * 
+	 * @return decrit
+	 * 		un boolean qui renvoi vrai si la sequence est bien
+	 * 		decrite par l'arn de base.
+	 * */
 	public boolean decrit( AcideRibonucleique decrite ){
-		//XI.decrit(x2)
-		// Chaine taille difference return false
-		/*Ex : VHCGNRCA decrit MACGUGCA ?
-		 * M decrit V mais V ne decrit pas M
-		 * Voir page 3 TP*/
-		return false;
+		boolean decrit = true;
+		/*
+		 * Voir la classe TableauDecrit pour voir
+		 * le deroulement de l'algorithme.
+		 * */
+		if (this.size()== decrite.size()){
+			decrit = TableauDecrit.decrite(this,decrite);
+		}else{
+			decrit = false;
+		}
+		
+		return decrit;
 	}
 	
 	public AcideRibonucleique generalise( AcideRibonucleique arn ){
@@ -160,5 +228,16 @@ public class AcideRibonucleique extends ArrayList<Nucleotide> {
 		 * Pour test x3.decrit(x1) et x3.decrit(x2)
 		 * tableau page 4*/
 		return this;
+	}
+	
+	public static void main (String[] args){
+		ArrayList <Nucleotide> tab = new ArrayList <>(Arrays.asList(Nucleotide.C,Nucleotide.K,Nucleotide.N));
+		ArrayList <Nucleotide> decrit = new ArrayList <>(Arrays.asList(Nucleotide.C,Nucleotide.G,Nucleotide.N));
+		
+		AcideRibonucleique arn = new AcideRibonucleique (tab);
+		AcideRibonucleique decrite = new AcideRibonucleique (decrit);
+		
+		System.out.print(arn.decrit(decrite));
+		
 	}
 }
