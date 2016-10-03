@@ -4,10 +4,13 @@ import java.util.Collection;
 public class AcideRibonucleique extends ArrayList<Nucleotide> {
 	
 	/*
-	 * Methode qui permet d'heriter de la classe ArrayList
+	 * Constructeur qui permet d'heriter de la classe ArrayList.
 	 * */
 	public AcideRibonucleique( Collection< Nucleotide > c ) {
 		super( c );
+	}
+	//Constructeur vide.
+	public AcideRibonucleique() {
 	}
 	
 	/*
@@ -15,8 +18,8 @@ public class AcideRibonucleique extends ArrayList<Nucleotide> {
 	 * dans une sequence de Nucleotide.
 	 * 
 	 * @param position
-	 * 			un entier qui correspond a la position
-	 * 			dans une sequence de Nucleotide.
+	 * 			un entier qui correspond a la position d'
+	 * 			un Nucleotide dans la sequence.
 	 * @return [] codon
 	 * 			un tableau de 3 Nucleotide.
 	 * */
@@ -38,6 +41,21 @@ public class AcideRibonucleique extends ArrayList<Nucleotide> {
 		}
 		return codon;
 	}
+	/*Permet de retrouver le codon a la position exacte
+	 * dans une sequence de Nucleotide.
+	 * 
+	 * @param position
+	 * 			un entier qui correspond a la position
+	 * 			du codon dans la sequence
+	 * @return [] codon
+	 * 			un tableau de 3 Nucleotide
+	 * */
+	public Nucleotide[] Codon(int position){
+		Nucleotide[] codon = new Nucleotide [3];
+		
+		codon = codon(position*3);
+		return codon;
+	}
 	
 	/*
 	 * Verifie que la sequence repond a certains
@@ -52,41 +70,41 @@ public class AcideRibonucleique extends ArrayList<Nucleotide> {
 		
 		if ((this.size()%3) != 0){
 			valide = false;
-		}
-		
-		for (int position = 0;position<=this.size()-1; ++position){
-			codon = codon(position);
+		}else{
+			for (int position = 0;position<=this.size()-1; ++position){
+				codon = codon(position);
 			
-			if(position == 0 || position == 1 || position == 2){
+				if(position == 0 || position == 1 || position == 2){
 				
-				if(!((codon[0]==Nucleotide.A) ||(codon[0]==Nucleotide.U)||
-						(codon[0]==Nucleotide.G))){
-					valide= false;
-				}else if(!(codon[1]==Nucleotide.U)){
-					valide= false;
-				}else if(!(codon[2]==Nucleotide.G)){
-					valide = false;
-				}
+					if(!((codon[0]==Nucleotide.A) ||(codon[0]==Nucleotide.U)||
+							(codon[0]==Nucleotide.G))){
+						valide= false;
+					}else if(!(codon[1]==Nucleotide.U)){
+						valide= false;
+					}else if(!(codon[2]==Nucleotide.G)){
+						valide = false;
+					}
 				
-			}else if(position == this.size()-1||position == this.size()-2||position == this.size()-3){
+				}else if(position == this.size()-1||position == this.size()-2||position == this.size()-3){
 				
-				if(!(codon[0]==Nucleotide.U)){
-					valide= false;
-				}else if(!((codon[1]==Nucleotide.A))||(codon[1]==Nucleotide.G)){
-					valide= false;
-				}else if(!(codon[2]==Nucleotide.A)){
-					valide = false;
-				}
+					if(!(codon[0]==Nucleotide.U)){
+						valide= false;
+					}else if(!((codon[1]==Nucleotide.A))||(codon[1]==Nucleotide.G)){
+						valide= false;
+					}else if(!(codon[2]==Nucleotide.A)){
+						valide = false;
+					}
 				
-			}else{
+				}else{
 				
-				if((codon[0]==Nucleotide.U)&&(codon[1]==Nucleotide.A)&&
-						(codon[2]==Nucleotide.A)){
-					valide= false;
+					if((codon[0]==Nucleotide.U)&&(codon[1]==Nucleotide.A)&&
+							(codon[2]==Nucleotide.A)){
+						valide= false;
+					}
 				}
 			}
 		}
-		return valide;
+			return valide;
 	}
 	
 	/*
@@ -106,7 +124,7 @@ public class AcideRibonucleique extends ArrayList<Nucleotide> {
 	public AcideAmine getAcideAmine( int position ) throws IndexOutOfBoundsException{
 		Nucleotide[] codon = new Nucleotide [3];
 		AcideAmine acide = null;
-		codon = codon(position);
+		codon = Codon(position);
 		/*
 		 * Voir la classe TableauAcide pour voir
 		 * le deroulement de l'algorithme.
@@ -142,26 +160,5 @@ public class AcideRibonucleique extends ArrayList<Nucleotide> {
 		 * Pour test x3.decrit(x1) et x3.decrit(x2)
 		 * tableau page 4*/
 		return this;
-	}
-	
-	public static void main (String[] args){
-		
-		ArrayList <Nucleotide> ok = new ArrayList <>();
-		ok.add(Nucleotide.A);
-		ok.add(Nucleotide.U);
-		ok.add(Nucleotide.G);
-		ok.add(Nucleotide.C);
-		ok.add(Nucleotide.U);
-		ok.add(Nucleotide.A);
-		ok.add(Nucleotide.G);
-		ok.add(Nucleotide.U);
-		ok.add(Nucleotide.G);
-		ok.add(Nucleotide.U);
-		ok.add(Nucleotide.A);
-		ok.add(Nucleotide.A);
-		
-		AcideRibonucleique tab = new AcideRibonucleique(ok);
-		System.out.println(tab.estValide());
-		System.out.println(tab.getAcideAmine(7));
 	}
 }
