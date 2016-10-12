@@ -12,24 +12,24 @@ public class Decrit {
 	 * Ex: l'ArrayList A represente toutes les Nucleotides que
 	 * le Nucleotide A peut decrire.
 	 * */
-	public static ArrayList <Nucleotide> A = new ArrayList<> (Arrays.asList(Nucleotide.A,Nucleotide.R,Nucleotide.W,Nucleotide.M,Nucleotide.D,
+	private static ArrayList <Nucleotide> A = new ArrayList<> (Arrays.asList(Nucleotide.A,Nucleotide.R,Nucleotide.W,Nucleotide.M,Nucleotide.D,
 										Nucleotide.H,Nucleotide.V,Nucleotide.N));
-	public static ArrayList <Nucleotide> C = new ArrayList<> (Arrays.asList(Nucleotide.C,Nucleotide.Y,Nucleotide.S,Nucleotide.M,Nucleotide.B,
+	private static ArrayList <Nucleotide> C = new ArrayList<> (Arrays.asList(Nucleotide.C,Nucleotide.Y,Nucleotide.S,Nucleotide.M,Nucleotide.B,
 										Nucleotide.H,Nucleotide.V,Nucleotide.N));
-	public static ArrayList <Nucleotide> G = new ArrayList<> (Arrays.asList(Nucleotide.G,Nucleotide.R,Nucleotide.S,Nucleotide.K,Nucleotide.B,
+	private static ArrayList <Nucleotide> G = new ArrayList<> (Arrays.asList(Nucleotide.G,Nucleotide.R,Nucleotide.S,Nucleotide.K,Nucleotide.B,
 										Nucleotide.D,Nucleotide.V,Nucleotide.N));
-	public static ArrayList <Nucleotide> U = new ArrayList<> (Arrays.asList(Nucleotide.U,Nucleotide.Y,Nucleotide.W,Nucleotide.K,Nucleotide.B,
+	private static ArrayList <Nucleotide> U = new ArrayList<> (Arrays.asList(Nucleotide.U,Nucleotide.Y,Nucleotide.W,Nucleotide.K,Nucleotide.B,
 										Nucleotide.D,Nucleotide.H,Nucleotide.N));
-	public static ArrayList <Nucleotide> R = new ArrayList<> (Arrays.asList(Nucleotide.R,Nucleotide.D,Nucleotide.V,Nucleotide.N));
-	public static ArrayList <Nucleotide> Y = new ArrayList<> (Arrays.asList(Nucleotide.Y,Nucleotide.B,Nucleotide.H,Nucleotide.N));
-	public static ArrayList <Nucleotide> S = new ArrayList<> (Arrays.asList(Nucleotide.S,Nucleotide.B,Nucleotide.V,Nucleotide.N));
-	public static ArrayList <Nucleotide> W = new ArrayList<> (Arrays.asList(Nucleotide.W,Nucleotide.D,Nucleotide.H,Nucleotide.N));
-	public static ArrayList <Nucleotide> K = new ArrayList<> (Arrays.asList(Nucleotide.K,Nucleotide.B,Nucleotide.D,Nucleotide.N));
-	public static ArrayList <Nucleotide> M = new ArrayList<> (Arrays.asList(Nucleotide.M,Nucleotide.H,Nucleotide.V,Nucleotide.N));
-	public static ArrayList <Nucleotide> B = new ArrayList<> (Arrays.asList(Nucleotide.B,Nucleotide.N));
-	public static ArrayList <Nucleotide> D = new ArrayList<> (Arrays.asList(Nucleotide.D,Nucleotide.N));
-	public static ArrayList <Nucleotide> H = new ArrayList<> (Arrays.asList(Nucleotide.H,Nucleotide.N));
-	public static ArrayList <Nucleotide> V = new ArrayList<> (Arrays.asList(Nucleotide.V,Nucleotide.N));
+	private static ArrayList <Nucleotide> R = new ArrayList<> (Arrays.asList(Nucleotide.R,Nucleotide.D,Nucleotide.V,Nucleotide.N));
+	private static ArrayList <Nucleotide> Y = new ArrayList<> (Arrays.asList(Nucleotide.Y,Nucleotide.B,Nucleotide.H,Nucleotide.N));
+	private static ArrayList <Nucleotide> S = new ArrayList<> (Arrays.asList(Nucleotide.S,Nucleotide.B,Nucleotide.V,Nucleotide.N));
+	private static ArrayList <Nucleotide> W = new ArrayList<> (Arrays.asList(Nucleotide.W,Nucleotide.D,Nucleotide.H,Nucleotide.N));
+	private static ArrayList <Nucleotide> K = new ArrayList<> (Arrays.asList(Nucleotide.K,Nucleotide.B,Nucleotide.D,Nucleotide.N));
+	private static ArrayList <Nucleotide> M = new ArrayList<> (Arrays.asList(Nucleotide.M,Nucleotide.H,Nucleotide.V,Nucleotide.N));
+	private static ArrayList <Nucleotide> B = new ArrayList<> (Arrays.asList(Nucleotide.B,Nucleotide.N));
+	private static ArrayList <Nucleotide> D = new ArrayList<> (Arrays.asList(Nucleotide.D,Nucleotide.N));
+	private static ArrayList <Nucleotide> H = new ArrayList<> (Arrays.asList(Nucleotide.H,Nucleotide.N));
+	private static ArrayList <Nucleotide> V = new ArrayList<> (Arrays.asList(Nucleotide.V,Nucleotide.N));
 	
 	/*
 	 * Methode appelee par decrit de la classe ARN.

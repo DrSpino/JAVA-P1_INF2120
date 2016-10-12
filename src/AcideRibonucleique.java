@@ -1,7 +1,7 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 
+@SuppressWarnings("serial")
 public class AcideRibonucleique extends ArrayList<Nucleotide> {
 	
 	/*
@@ -40,21 +40,6 @@ public class AcideRibonucleique extends ArrayList<Nucleotide> {
 				codon[i] = this.get((position-2)+i);
 			}
 		}
-		return codon;
-	}
-	/*Permet de retrouver le codon a la position exacte
-	 * dans une sequence de Nucleotide.
-	 * 
-	 * @param position
-	 * 			un entier qui correspond a la position
-	 * 			du codon dans la sequence
-	 * @return [] codon
-	 * 			un tableau de 3 Nucleotide
-	 * */
-	public Nucleotide[] Codon(int position){
-		Nucleotide[] codon = new Nucleotide [3];
-		
-		codon = codon(position*3);
 		return codon;
 	}
 	
@@ -125,7 +110,7 @@ public class AcideRibonucleique extends ArrayList<Nucleotide> {
 	public AcideAmine getAcideAmine( int position ) throws IndexOutOfBoundsException{
 		Nucleotide[] codon = new Nucleotide [3];
 		AcideAmine acide = null;
-		codon = Codon(position);
+		codon = codon(position*3);
 		/*
 		 * Voir la classe Acide pour voir
 		 * le deroulement de l'algorithme.
@@ -191,6 +176,7 @@ public class AcideRibonucleique extends ArrayList<Nucleotide> {
 		}
 		return comp;
 	}
+	
 	/*
 	 * Permet de comparer deux arn et de determiner si
 	 * une sequence arn est bien decrite par la sequence
@@ -219,9 +205,21 @@ public class AcideRibonucleique extends ArrayList<Nucleotide> {
 		return decrit;
 	}
 	
+	/*Permet de generaliser deux sequences de Nucleotide.
+	 * 
+	 * @param arn
+	 * 		un array arn.
+	 * 
+	 * @return generalise
+	 * 		un array qui represente l'arn generalisee
+	 * 		de la sequence de base et la sequence arn.		
+	 * */
 	public AcideRibonucleique generalise( AcideRibonucleique arn ){
 		ArrayList<Nucleotide>gen = new ArrayList<>();
-		
+		/*
+		 * Voir la classe Generalise pour voir
+		 * le deroulement de l'algorithme.
+		 * */
 		if (this.size()== arn.size()){
 			gen = Generalise.Gen(this,arn);
 		}

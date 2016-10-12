@@ -2,46 +2,46 @@ import java.util.ArrayList;
 
 public class Generalise {
 	
-	public static Nucleotide[]A	= {Nucleotide.A,Nucleotide.M,Nucleotide.R,Nucleotide.W,Nucleotide.R,Nucleotide.H,Nucleotide.V,
+	private static Nucleotide[]A	= {Nucleotide.A,Nucleotide.M,Nucleotide.R,Nucleotide.W,Nucleotide.R,Nucleotide.H,Nucleotide.V,
 										Nucleotide.W,Nucleotide.D,Nucleotide.M,Nucleotide.N,Nucleotide.D,Nucleotide.H,
 										Nucleotide.V};
-	public static Nucleotide[]C	= {Nucleotide.M,Nucleotide.C,Nucleotide.S,Nucleotide.Y,Nucleotide.V,Nucleotide.Y,Nucleotide.S,
+	private static Nucleotide[]C	= {Nucleotide.M,Nucleotide.C,Nucleotide.S,Nucleotide.Y,Nucleotide.V,Nucleotide.Y,Nucleotide.S,
 										Nucleotide.H,Nucleotide.B,Nucleotide.M,Nucleotide.B,Nucleotide.N,Nucleotide.H,
 										Nucleotide.V};
-	public static Nucleotide[]G	= {Nucleotide.R,Nucleotide.S,Nucleotide.G,Nucleotide.K,Nucleotide.R,Nucleotide.B,Nucleotide.S,
+	private static Nucleotide[]G	= {Nucleotide.R,Nucleotide.S,Nucleotide.G,Nucleotide.K,Nucleotide.R,Nucleotide.B,Nucleotide.S,
 										Nucleotide.D,Nucleotide.K,Nucleotide.V,Nucleotide.B,Nucleotide.D,Nucleotide.N,
 										Nucleotide.V};
-	public static Nucleotide[]U	= {Nucleotide.W,Nucleotide.Y,Nucleotide.K,Nucleotide.U,Nucleotide.D,Nucleotide.Y,Nucleotide.B,
+	private static Nucleotide[]U	= {Nucleotide.W,Nucleotide.Y,Nucleotide.K,Nucleotide.U,Nucleotide.D,Nucleotide.Y,Nucleotide.B,
 										Nucleotide.W,Nucleotide.K,Nucleotide.H,Nucleotide.B,Nucleotide.D,Nucleotide.H,
 										Nucleotide.N};
-	public static Nucleotide[]R	= {Nucleotide.R,Nucleotide.V,Nucleotide.R,Nucleotide.D,Nucleotide.R,Nucleotide.N,Nucleotide.V,
+	private static Nucleotide[]R	= {Nucleotide.R,Nucleotide.V,Nucleotide.R,Nucleotide.D,Nucleotide.R,Nucleotide.N,Nucleotide.V,
 										Nucleotide.D,Nucleotide.D,Nucleotide.V,Nucleotide.N,Nucleotide.D,Nucleotide.N,
 										Nucleotide.V};
-	public static Nucleotide[]Y	= {Nucleotide.H,Nucleotide.Y,Nucleotide.B,Nucleotide.Y,Nucleotide.N,Nucleotide.Y,Nucleotide.B,
+	private static Nucleotide[]Y	= {Nucleotide.H,Nucleotide.Y,Nucleotide.B,Nucleotide.Y,Nucleotide.N,Nucleotide.Y,Nucleotide.B,
 										Nucleotide.H,Nucleotide.D,Nucleotide.H,Nucleotide.B,Nucleotide.N,Nucleotide.H,
 										Nucleotide.N};
-	public static Nucleotide[]S	= {Nucleotide.V,Nucleotide.S,Nucleotide.S,Nucleotide.B,Nucleotide.V,Nucleotide.B,Nucleotide.S,
+	private static Nucleotide[]S	= {Nucleotide.V,Nucleotide.S,Nucleotide.S,Nucleotide.B,Nucleotide.V,Nucleotide.B,Nucleotide.S,
 										Nucleotide.N,Nucleotide.B,Nucleotide.V,Nucleotide.B,Nucleotide.N,Nucleotide.N,
 										Nucleotide.V};
-	public static Nucleotide[]W	= {Nucleotide.W,Nucleotide.H,Nucleotide.D,Nucleotide.W,Nucleotide.D,Nucleotide.H,Nucleotide.N,
+	private static Nucleotide[]W	= {Nucleotide.W,Nucleotide.H,Nucleotide.D,Nucleotide.W,Nucleotide.D,Nucleotide.H,Nucleotide.N,
 										Nucleotide.W,Nucleotide.D,Nucleotide.H,Nucleotide.N,Nucleotide.D,Nucleotide.H,
 										Nucleotide.N};
-	public static Nucleotide[]K	= {Nucleotide.D,Nucleotide.B,Nucleotide.K,Nucleotide.K,Nucleotide.D,Nucleotide.D,Nucleotide.B,
+	private static Nucleotide[]K	= {Nucleotide.D,Nucleotide.B,Nucleotide.K,Nucleotide.K,Nucleotide.D,Nucleotide.D,Nucleotide.B,
 										Nucleotide.D,Nucleotide.K,Nucleotide.N,Nucleotide.B,Nucleotide.D,Nucleotide.N,
 										Nucleotide.N};
-	public static Nucleotide[]M	= {Nucleotide.M,Nucleotide.M,Nucleotide.V,Nucleotide.H,Nucleotide.V,Nucleotide.H,Nucleotide.V,
+	private static Nucleotide[]M	= {Nucleotide.M,Nucleotide.M,Nucleotide.V,Nucleotide.H,Nucleotide.V,Nucleotide.H,Nucleotide.V,
 										Nucleotide.H,Nucleotide.N,Nucleotide.M,Nucleotide.N,Nucleotide.N,Nucleotide.H,
 										Nucleotide.V};
-	public static Nucleotide[]B	= {Nucleotide.N,Nucleotide.B,Nucleotide.B,Nucleotide.B,Nucleotide.N,Nucleotide.B,Nucleotide.B,
+	private static Nucleotide[]B	= {Nucleotide.N,Nucleotide.B,Nucleotide.B,Nucleotide.B,Nucleotide.N,Nucleotide.B,Nucleotide.B,
 										Nucleotide.N,Nucleotide.B,Nucleotide.N,Nucleotide.B,Nucleotide.N,Nucleotide.N,
 										Nucleotide.N};
-	public static Nucleotide[]D	= {Nucleotide.D,Nucleotide.N,Nucleotide.D,Nucleotide.D,Nucleotide.D,Nucleotide.N,Nucleotide.N,
+	private static Nucleotide[]D	= {Nucleotide.D,Nucleotide.N,Nucleotide.D,Nucleotide.D,Nucleotide.D,Nucleotide.N,Nucleotide.N,
 										Nucleotide.D,Nucleotide.D,Nucleotide.N,Nucleotide.N,Nucleotide.D,Nucleotide.N,
 										Nucleotide.N};
-	public static Nucleotide[]H	= {Nucleotide.H,Nucleotide.H,Nucleotide.N,Nucleotide.H,Nucleotide.N,Nucleotide.H,Nucleotide.N,
+	private static Nucleotide[]H	= {Nucleotide.H,Nucleotide.H,Nucleotide.N,Nucleotide.H,Nucleotide.N,Nucleotide.H,Nucleotide.N,
 										Nucleotide.H,Nucleotide.N,Nucleotide.H,Nucleotide.N,Nucleotide.N,Nucleotide.H,
 										Nucleotide.N};
-	public static Nucleotide[]V	= {Nucleotide.V,Nucleotide.V,Nucleotide.V,Nucleotide.N,Nucleotide.V,Nucleotide.N,Nucleotide.V,
+	private static Nucleotide[]V	= {Nucleotide.V,Nucleotide.V,Nucleotide.V,Nucleotide.N,Nucleotide.V,Nucleotide.N,Nucleotide.V,
 										Nucleotide.N,Nucleotide.N,Nucleotide.V,Nucleotide.N,Nucleotide.N,Nucleotide.N,
 										Nucleotide.V};
 	
@@ -92,6 +92,8 @@ public class Generalise {
 				break;
 			case V :
 				pos = 13;
+				break;
+			default:
 				break;
 			}
 			
