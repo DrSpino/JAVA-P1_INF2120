@@ -46,7 +46,7 @@ public class Generalise {
 										Nucleotide.V};
 	
 	
-	public static ArrayList<Nucleotide> Gen (AcideRibonucleique arn, AcideRibonucleique gen){
+	protected static ArrayList<Nucleotide> Gen (AcideRibonucleique arn, AcideRibonucleique gen){
 		ArrayList <Nucleotide> generalise = new ArrayList <>();
 		for(int i = 0 ; i < arn.size(); ++i){
 			int pos = 0;
